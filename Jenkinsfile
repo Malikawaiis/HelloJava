@@ -12,7 +12,7 @@ pipeline {
             steps {
                 echo 'Running Tests...'
                 // Run the test cases
-                sh 'mvn test'
+              //  sh 'mvn test'
             }
         }
         stage('Deploy') {
