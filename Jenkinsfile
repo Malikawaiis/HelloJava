@@ -25,6 +25,9 @@ pipeline {
             }
         }
         stage('Test') {
+            when {
+                expression { return params.executeTests } // Run tests only if the parameter is true
+            }
             steps {
                 echo 'Running Tests...'
                 echo "Testing with Java version: ${env.JAVA_VERSION}"
