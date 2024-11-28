@@ -5,14 +5,14 @@ pipeline {
             steps {
                 echo 'Building...'
                 // Compile the project
-              //  sh 'mvn clean compile'
+               // sh 'mvn clean compile'
             }
         }
         stage('Test') {
             steps {
                 echo 'Running Tests...'
                 // Run the test cases
-              //  sh 'mvn test'
+               // sh 'mvn test'
             }
         }
         stage('Deploy') {
