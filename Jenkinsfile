@@ -1,8 +1,14 @@
 pipeline {
     agent any
-      tools {
-        maven 'Maven' // Reference the Maven installation defined in Jenkins global configuration
-        jdk 'JDK-11'        // Reference the JDK installation defined in Jenkins global configuration
+      parameters {
+        // Parameter to input a custom version
+        string(name: 'VERSION', defaultValue: '', description: 'Version to deploy on production')
+
+        // Parameter to choose a version from predefined options
+        choice(name: 'VERSION_CHOICE', choices: ['1.1.0', '1.2.0', '1.3.0'], description: 'Select version to deploy')
+
+        // Boolean parameter to decide whether to execute tests
+        booleanParam(name: 'executeTests', defaultValue: true, description: 'Execute tests during the pipeline?')
     }
     environment {
         JAVA_VERSION = '11'
