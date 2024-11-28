@@ -1,7 +1,7 @@
 pipeline {
     agent any
       tools {
-        maven 'Maven-3.8.5' // Reference the Maven installation defined in Jenkins global configuration
+        maven 'Maven' // Reference the Maven installation defined in Jenkins global configuration
         jdk 'JDK-11'        // Reference the JDK installation defined in Jenkins global configuration
     }
     environment {
